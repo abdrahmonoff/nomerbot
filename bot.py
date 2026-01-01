@@ -22,7 +22,7 @@ ADMIN_ID = 817765302
 
 # 3. ADMIN_USERNAME - Sizning Telegram username ingiz (@ belgisisiz)
 # Masalan: "sarvar_dev"
-ADMIN_USERNAME = "sizning_username"
+ADMIN_USERNAME = "abdrahmonoff"
 
 # 4. ISHCHI VAQT - Xizmat ko'rsatish vaqti
 WORK_START_HOUR = 9   # 09:00 dan
