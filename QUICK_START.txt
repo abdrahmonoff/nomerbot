@@ -1,0 +1,72 @@
+==============================================
+   YOUTUBE BOT - TEZKOR QOLLANMA
+==============================================
+
+FAYLLAR:
+- bot.py (asosiy)
+- start.bat (ishga tushirish)
+- install.bat (o'rnatish)
+- stop.bat (to'xtatish)
+
+==============================================
+   3 QADAM - 5 DAQIQA
+==============================================
+
+1. TOKEN VA ID OLING
+   @BotFather -> /newbot -> TOKEN
+   @userinfobot -> /start -> ID
+
+2. bot.py NI TAHRIRLANG
+   14-qator: TOKEN = "..."
+   18-qator: ADMIN_ID = ...
+   22-qator: ADMIN_USERNAME = "..."
+   Saqlang: Ctrl + S
+
+3. ISHGA TUSHIRING
+   install.bat (birinchi marta)
+   start.bat (har safar)
+
+==============================================
+   ADMIN KOMANDALAR
+==============================================
+
+/admin - Qo'llanma
+/num USER_ID +1234567890 - Raqam
+/code USER_ID 123456 - Kod (sotuv!)
+/stats - Statistika
+
+==============================================
+   MUHIM
+==============================================
+
+SOTUV = KOD YUBORILDI
+- /num yuborish = sotuv EMAS
+- /code yuborish = SOTUV!
+
+Kunlik hisobot: 23:00 (bot.py 30-qator)
+
+==============================================
+   TEST
+==============================================
+
+1. start.bat -> Ikki marta bosing
+2. Telegram: /start
+3. /stats -> 0 ta
+4. /num 123 +1234567890
+5. /stats -> Hali 0 ta
+6. /code 123 123456
+7. /stats -> 1 ta! ✅
+
+==============================================
+   FAYLLAR
+==============================================
+
+bot.py - Bot kodi
+payments.jsonl - To'lovlar
+sales.jsonl - Sotuvlar
+
+==============================================
+
+To'liq qo'llanma: README.txt
+
+OMADLAR! 🚀
