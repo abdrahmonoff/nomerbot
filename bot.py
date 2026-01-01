@@ -14,15 +14,15 @@ from aiogram.enums import ContentType
 
 # 1. TOKEN - BotFather dan olingan token
 # Masalan: "6789012345:AAEabcDefGhIjKlMnOpQrStUvWxYz123456"
-TOKEN = "6518211111:AAFGnUEBzp7H1-SK2DU3sSGxAjx_StBOpUc"
+TOKEN = "BURGA_BOTFATHER_DAN_OLINGAN_TOKEN_NI_JOYLANG"
 
 # 2. ADMIN_ID - @userinfobot dan olingan ID raqam
 # Masalan: 987654321
-ADMIN_ID = 817765302
+ADMIN_ID = 123456789
 
 # 3. ADMIN_USERNAME - Sizning Telegram username ingiz (@ belgisisiz)
 # Masalan: "sarvar_dev"
-ADMIN_USERNAME = "abdrahmonoff"
+ADMIN_USERNAME = "sizning_username"
 
 # 4. ISHCHI VAQT - Xizmat ko'rsatish vaqti
 WORK_START_HOUR = 9   # 09:00 dan
@@ -856,6 +856,25 @@ async def handle_all_messages(message: Message):
 
 # Keep the original handlers but they won't be called since catch-all is first
 
+# ========= HTTP SERVER (RENDER UCHUN) =========
+from aiohttp import web
+
+async def health_check(request):
+    """HTTP health check endpoint - Render uchun"""
+    return web.Response(text="✅ Bot ishlayapti!")
+
+async def start_http_server():
+    """HTTP server ishga tushirish - Render 'Web Service' uchun kerak"""
+    app = web.Application()
+    app.router.add_get('/', health_check)
+    app.router.add_get('/health', health_check)
+    runner = web.AppRunner(app)
+    await runner.setup()
+    port = int(os.getenv('PORT', 10000))
+    site = web.TCPSite(runner, '0.0.0.0', port)
+    await site.start()
+    print(f"✅ HTTP server started on port {port}")
+
 async def main():
     if TOKEN == "BURGA_BOTFATHER_DAN_OLINGAN_TOKEN_NI_JOYLANG" or len(TOKEN) < 20:
         print("=" * 60)
@@ -904,6 +923,9 @@ async def main():
     print("=" * 60)
     print()
     
+    # HTTP server ishga tushirish (Render uchun)
+    asyncio.create_task(start_http_server())
+    
     # Hisobotlarni ishga tushirish
     asyncio.create_task(schedule_daily_reports())
     asyncio.create_task(schedule_monthly_reports())
@@ -918,5 +940,3 @@ if __name__ == "__main__":
     except Exception as e:
         print(f"\n\n❌ Xatolik: {e}")
         input("\nPress Enter to exit...")
-# Izoh qo'shing:
-# Updated: 2026-01-01
