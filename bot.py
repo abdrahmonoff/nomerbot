@@ -918,3 +918,5 @@ if __name__ == "__main__":
     except Exception as e:
         print(f"\n\n❌ Xatolik: {e}")
         input("\nPress Enter to exit...")
+# Izoh qo'shing:
+# Updated: 2026-01-01
