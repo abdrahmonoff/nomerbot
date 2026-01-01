@@ -14,11 +14,11 @@ from aiogram.enums import ContentType
 
 # 1. TOKEN - BotFather dan olingan token
 # Masalan: "6789012345:AAEabcDefGhIjKlMnOpQrStUvWxYz123456"
-TOKEN = "BURGA_BOTFATHER_DAN_OLINGAN_TOKEN_NI_JOYLANG"
+TOKEN = "6518211111:AAFGnUEBzp7H1-SK2DU3sSGxAjx_StBOpUc"
 
 # 2. ADMIN_ID - @userinfobot dan olingan ID raqam
 # Masalan: 987654321
-ADMIN_ID = 123456789
+ADMIN_ID = 817765302
 
 # 3. ADMIN_USERNAME - Sizning Telegram username ingiz (@ belgisisiz)
 # Masalan: "sarvar_dev"
