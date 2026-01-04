@@ -4,6 +4,7 @@ import json
 import logging
 import asyncio
 from datetime import datetime
+import pytz  # Toshkent vaqti uchun
 from aiogram import Bot, Dispatcher, F
 from aiogram.filters import Command
 from aiogram.types import Message, CallbackQuery, ReplyKeyboardMarkup, KeyboardButton, InlineKeyboardMarkup, InlineKeyboardButton
@@ -38,8 +39,9 @@ DAILY_REPORT_TIME = "23:00"  # Har kuni soat 23:00 da
 # ==========================
 
 def is_working_hours():
-    """Ishchi vaqtni tekshirish - 09:00 dan 23:00 gacha"""
-    now = datetime.now()
+    """Ishchi vaqtni tekshirish - 09:00 dan 23:00 gacha (Toshkent vaqti)"""
+    tz = pytz.timezone('Asia/Tashkent')
+    now = datetime.now(tz)
     current_hour = now.hour
     return WORK_START_HOUR <= current_hour < WORK_END_HOUR
 
@@ -296,7 +298,8 @@ async def start(message: Message):
 async def menu_buy(message: Message):
     # Ishchi vaqtni tekshirish
     if not is_working_hours():
-        now = datetime.now()
+        tz = pytz.timezone('Asia/Tashkent')
+        now = datetime.now(tz)
         await message.answer(
             f"🕐 ISHCHI VAQT: 09:00 - 23:00\n\n"
             f"⏰ Hozirgi vaqt: {now.strftime('%H:%M')}\n\n"
@@ -507,7 +510,8 @@ async def cmd_stats(message: Message):
 async def buy(callback: CallbackQuery):
     # Ishchi vaqtni tekshirish
     if not is_working_hours():
-        now = datetime.now()
+        tz = pytz.timezone('Asia/Tashkent')
+        now = datetime.now(tz)
         await callback.message.answer(
             f"🕐 ISHCHI VAQT: 09:00 - 23:00\n\n"
             f"⏰ Hozirgi vaqt: {now.strftime('%H:%M')}\n\n"
