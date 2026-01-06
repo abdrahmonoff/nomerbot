@@ -272,7 +272,7 @@ async def start(message: Message):
         "👋 Assalomu alaykum!\n\n"
         "🎥 YouTube kanalini tasdiqlash uchun Kanada raqami xizmati.\n\n"
         "✅ Nimalar olasiz:\n"
-        "  • 🇨🇦 Kanada raqami (NANP)\n"
+        "  • 🇨🇦 Kanada raqami (Shimoliy Amerika)\n"
         "  • 🔐 Tasdiqlash kodi\n"
         "  • ⏱ 20 daqiqa muddat\n"
         "  • 💬 Yordam va qo'llab-quvvatlash\n\n"
@@ -312,9 +312,6 @@ async def menu_buy(message: Message):
     await message.answer(
         "💳 To'lov: *30,000 so'm*\n\n"
         "🎥 YouTube kanalini tasdiqlash uchun *Kanada* 🇨🇦 raqami olib beraman.\n\n"
-        "📞 *NANP tizimi:*\n"
-        "Shimoliy Amerika raqamlash rejasi (North American Numbering Plan)\n"
-        "Format: +1 (XXX) XXX-XXXX\n\n"
         "⚠️ *Diqqat:* Bu raqam *faqat YouTube kanal verifikatsiyasi* uchun!\n"
         "Google account/Gmail ochish uchun ishlatib bo'lmaydi.\n\n"
         "Davom etish uchun pastdagi tugmani bosing 👇",
@@ -327,7 +324,6 @@ async def menu_prices(message: Message):
         "💰 *Xizmat narxi:*\n\n"
         "📱 YouTube tasdiqlash uchun raqam – *30,000 so'm*\n\n"
         "🌎 Davlat: *Kanada* 🇨🇦\n"
-        "📞 Format: +1 (XXX) XXX-XXXX (NANP)\n"
         "⏱ Har bir raqam 20 daqiqa amal qiladi.\n"
         "🔐 Raqamlar faqat YouTube tasdiqlash uchun mo'ljallangan.",
         parse_mode="Markdown",
@@ -340,22 +336,18 @@ async def menu_how_it_works(message: Message):
         "1️⃣ 📲 Raqam olish tugmasini bosing\n"
         "2️⃣ To'lov qiling (30,000 so'm) va chekni yuboring\n"
         "3️⃣ Admin sizga Kanada raqamini yuboradi\n"
-        "4️⃣ YouTube'da Canada/Kanada davlatini tanlang\n"
-        "5️⃣ Raqamni kiriting (+1 bilan)\n"
+        "4️⃣ YouTube'da Kanada davlatini tanlang\n"
+        "5️⃣ Raqamni kiriting\n"
         "6️⃣ Kod kelgach, botda 'Kod yubordim' bosing\n"
         "7️⃣ Admin tasdiqlash kodini yuboradi\n"
         "8️⃣ Kodni YouTube'ga kiriting - tayyor! ✅\n\n"
-        "📞 *Kanada raqami haqida:*\n"
-        "🌎 NANP tizimi - Shimoliy Amerika\n"
-        "📱 Format: +1 (XXX) XXX-XXXX\n"
-        "🇨🇦 Kanada, SSHA va boshqalar\n\n"
         "⏱ Raqam 20 daqiqa amal qiladi.\n"
         "Odatda jarayon 5-10 daqiqa davom etadi.\n\n"
         "💬 Savol yoki muammo bo'lsa:\n"
         "👉 Admin: @{}\n"
         "Yordam beramiz!".format(ADMIN_USERNAME)
     )
-    await message.answer(text, parse_mode="Markdown", reply_markup=get_main_menu())
+    await message.answer(text, reply_markup=get_main_menu())
 
 async def menu_help(message: Message):
     text = (
@@ -394,7 +386,6 @@ async def cmd_info(message: Message):
         "ℹ️ XIZMAT HAQIDA\n\n"
         "📺 Xizmat turi: YouTube kanalini tasdiqlash uchun raqam\n"
         "🌍 Davlat: Kanada 🇨🇦\n"
-        "📞 Tizim: NANP (Shimoliy Amerika)\n"
         "⏱ Amal qilish: 20 daqiqa\n\n"
         "💰 Narx: 30,000 so'm\n\n"
         "⚠️ MUHIM:\n"
@@ -669,15 +660,11 @@ async def send_number(message: Message):
             user_id,
             f"📱 Sizning Kanada raqamingiz:\n`{phone}`\n\n"
             "✅ Keyingi qadamlar:\n"
-            "1️⃣ YouTube'da Canada/Kanada davlatini tanlang\n"
-            "2️⃣ Shu raqamni kiriting (+1 bilan)\n"
+            "1️⃣ YouTube'da Kanada davlatini tanlang\n"
+            "2️⃣ Shu raqamni kiriting\n"
             "3️⃣ Kod kelgach, pastdagi tugmani bosing\n\n"
             "⏱ Raqam 20 daqiqa amal qiladi.\n"
             "Odatda 5-10 daqiqa yetadi ✅\n\n"
-            "ℹ️ *Kanada raqami haqida:*\n"
-            "🌎 NANP tizimi - Shimoliy Amerika\n"
-            "📱 +1 prefiksi bilan boshlanadi\n"
-            "🇨🇦 Kanada, SSHA va boshqalar\n\n"
             "Tayyor bo'lganingizda:",
             parse_mode="Markdown",
             reply_markup=kb
@@ -923,7 +910,7 @@ async def main():
     print()
     print(f"👤 Admin ID: {ADMIN_ID}")
     print(f"💰 Narx: {PRICE:,} so'm")
-    print(f"🌐 Davlat: Kanada 🇨🇦 (NANP)")
+    print(f"🌐 Davlat: Kanada 🇨🇦")
     print(f"📝 Admin: @{ADMIN_USERNAME}")
     print(f"📊 Kunlik hisobot: {DAILY_REPORT_TIME}")
     print()
