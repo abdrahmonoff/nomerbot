@@ -279,8 +279,7 @@ async def start(message: Message):
         "💰 Narx: 30,000 so'm\n\n"
         "🕐 Ishchi vaqt: 09:00 - 23:00\n"
         "(Xizmat faqat ish vaqtida ko'rsatiladi)\n\n"
-        "⚠️ Muhim: Bu raqam faqat YouTube kanal verifikatsiyasi uchun.\n"
-        "Google account ochish uchun ishlamaydi.\n\n"
+        "⚠️ Muhim: Bu raqam faqat YouTube kanal verifikatsiyasi uchun!\n\n"
         "Quyidagi menyudan kerakli bo'limni tanlang 👇"
     )
     await message.answer(text, reply_markup=get_main_menu())
@@ -312,8 +311,7 @@ async def menu_buy(message: Message):
     await message.answer(
         "💳 To'lov: *30,000 so'm*\n\n"
         "🎥 YouTube kanalini tasdiqlash uchun *Kanada* 🇨🇦 raqami olib beraman.\n\n"
-        "⚠️ *Diqqat:* Bu raqam *faqat YouTube kanal verifikatsiyasi* uchun!\n"
-        "Google account/Gmail ochish uchun ishlatib bo'lmaydi.\n\n"
+        "⚠️ *Diqqat:* Bu raqam *faqat YouTube kanal verifikatsiyasi* uchun!\n\n"
         "Davom etish uchun pastdagi tugmani bosing 👇",
         reply_markup=kb,
         parse_mode="Markdown"
@@ -389,8 +387,7 @@ async def cmd_info(message: Message):
         "⏱ Amal qilish: 20 daqiqa\n\n"
         "💰 Narx: 30,000 so'm\n\n"
         "⚠️ MUHIM:\n"
-        "Bu raqam faqat YouTube kanal verifikatsiyasi uchun.\n"
-        "Google account, Gmail yoki boshqa xizmatlar uchun ishlamaydi."
+        "Bu raqam faqat YouTube kanal verifikatsiyasi uchun!"
     )
     await message.answer(text, reply_markup=get_main_menu())
 
